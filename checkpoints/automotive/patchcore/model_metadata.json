@@ -1,0 +1,21 @@
+{
+  "model_name": "PatchCore-ResNet50-Automotive",
+  "domain": "Automotive Engine Wiring Defect Detection",
+  "dataset": "AutoVI engine_wiring",
+  "timestamp": "2026-11-25 15:19:45",
+  "backbone": "resnet50",
+  "all_backbone_parameters_frozen": true,
+  "device_trained_on": "cuda",
+  "gpu_model": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "train_nominal_images": 250,
+  "validation_nominal_images": 35,
+  "total_extracted_patches": 196000,
+  "coreset_memory_bank_size": 9800,
+  "coreset_sampling_ratio": 0.05,
+  "patch_vector_dimension": 1536,
+  "calibrated_threshold": 23.445653740407064,
+  "feature_extraction_seconds": 5.26,
+  "coreset_selection_seconds": 58.57,
+  "checkpoint_file": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\checkpoints\\automotive\\patchcore\\patchcore_model.pt",
+  "checkpoint_size_mb": 57.42
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "label": "Normal_Test_1",
+    "file": "0000.png",
+    "score": 19.7894,
+    "threshold": 23.4457,
+    "prediction": "NORMAL",
+    "is_anomaly": false
+  },
+  {
+    "label": "Normal_Test_2",
+    "file": "0001.png",
+    "score": 20.4848,
+    "threshold": 23.4457,
+    "prediction": "NORMAL",
+    "is_anomaly": false
+  },
+  {
+    "label": "Defect_Fastening_1",
+    "file": "0000.png",
+    "score": 20.2679,
+    "threshold": 23.4457,
+    "prediction": "NORMAL",
+    "is_anomaly": false
+  },
+  {
+    "label": "Defect_Fastening_2",
+    "file": "0001.png",
+    "score": 21.2301,
+    "threshold": 23.4457,
+    "prediction": "NORMAL",
+    "is_anomaly": false
+  },
+  {
+    "label": "Defect_BlueHoop",
+    "file": "0000.png",
+    "score": 21.16,
+    "threshold": 23.4457,
+    "prediction": "NORMAL",
+    "is_anomaly": false
+  },
+  {
+    "label": "Defect_Cardboard",
+    "file": "0000.png",
+    "score": 26.4367,
+    "threshold": 23.4457,
+    "prediction": "DEFECTIVE",
+    "is_anomaly": true
+  },
+  {
+    "label": "Defect_Multiple",
+    "file": "0000.png",
+    "score": 24.7126,
+    "threshold": 23.4457,
+    "prediction": "DEFECTIVE",
+    "is_anomaly": true
+  }
+]

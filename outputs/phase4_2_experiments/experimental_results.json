@@ -1,0 +1,2217 @@
+{
+  "metadata": {
+    "project": "PROMETHEUS-X",
+    "phase": "4.2",
+    "experiment_date": "2026-11-25",
+    "model": "PatchCore (Frozen ResNet-50)",
+    "calibrated_threshold": 23.4457,
+    "purpose": "Evaluation of isolated experimental inference methods (Spatial Relative Contrast and Connected Patch Cluster Aggregation) on AutoVI benchmark categories."
+  },
+  "benchmark_evaluations": [
+    {
+      "category": "good",
+      "filename": "0000.png",
+      "description": "Nominal Clean Engine Harness",
+      "baseline": {
+        "anomaly_score": 19.7894,
+        "threshold": 23.4457,
+        "is_anomaly": false,
+        "prediction": "NORMAL"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 14.4205,
+        "bg_estimated_std": 1.5571,
+        "peak_score": 19.7742,
+        "spatial_contrast_diff": 5.3537,
+        "relative_contrast_ratio": 1.3713,
+        "contrast_z_score": 3.44,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 10,
+        "total_anomalous_pixels": 15945,
+        "total_cluster_area_pct": 9.966,
+        "largest_cluster_area_px": 4522,
+        "largest_cluster_area_pct": 2.826,
+        "largest_cluster_peak_score": 19.5037,
+        "clusters": [
+          {
+            "id": 4,
+            "bbox": [
+              256,
+              187,
+              129,
+              138
+            ],
+            "centroid": [
+              338.6,
+              254.0
+            ],
+            "pixel_area": 4522,
+            "area_pct": 2.826,
+            "region_mean_score": 18.058,
+            "region_max_score": 19.5037
+          },
+          {
+            "id": 8,
+            "bbox": [
+              200,
+              253,
+              111,
+              96
+            ],
+            "centroid": [
+              263.5,
+              304.1
+            ],
+            "pixel_area": 3537,
+            "area_pct": 2.211,
+            "region_mean_score": 18.4536,
+            "region_max_score": 19.7742
+          },
+          {
+            "id": 3,
+            "bbox": [
+              321,
+              102,
+              68,
+              74
+            ],
+            "centroid": [
+              356.5,
+              140.2
+            ],
+            "pixel_area": 2794,
+            "area_pct": 1.746,
+            "region_mean_score": 18.4672,
+            "region_max_score": 19.5951
+          },
+          {
+            "id": 2,
+            "bbox": [
+              161,
+              50,
+              79,
+              65
+            ],
+            "centroid": [
+              203.6,
+              82.5
+            ],
+            "pixel_area": 2539,
+            "area_pct": 1.587,
+            "region_mean_score": 18.1895,
+            "region_max_score": 19.0409
+          },
+          {
+            "id": 7,
+            "bbox": [
+              185,
+              251,
+              52,
+              56
+            ],
+            "centroid": [
+              208.8,
+              279.7
+            ],
+            "pixel_area": 1780,
+            "area_pct": 1.113,
+            "region_mean_score": 18.3982,
+            "region_max_score": 19.5779
+          },
+          {
+            "id": 6,
+            "bbox": [
+              204,
+              208,
+              24,
+              36
+            ],
+            "centroid": [
+              215.8,
+              225.1
+            ],
+            "pixel_area": 458,
+            "area_pct": 0.286,
+            "region_mean_score": 17.8945,
+            "region_max_score": 18.5027
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 19.7742,
+        "mean_anomaly_score": 15.2205,
+        "num_suspicious_regions": 6,
+        "total_suspicious_area_pct": 9.966,
+        "largest_region_area_px": 4522,
+        "largest_region_area_pct": 2.826,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 256,
+              "y": 187,
+              "width": 129,
+              "height": 138
+            },
+            "centroid": {
+              "x": 338.6,
+              "y": 254.0
+            },
+            "pixel_area": 4522,
+            "area_percentage": 2.826,
+            "region_mean_score": 18.058,
+            "region_peak_score": 19.5037,
+            "relative_contrast": 5.0832,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 200,
+              "y": 253,
+              "width": 111,
+              "height": 96
+            },
+            "centroid": {
+              "x": 263.5,
+              "y": 304.1
+            },
+            "pixel_area": 3537,
+            "area_percentage": 2.211,
+            "region_mean_score": 18.4536,
+            "region_peak_score": 19.7742,
+            "relative_contrast": 5.3537,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 3,
+            "label": "Estimated Anomalous Region #3",
+            "bounding_box": {
+              "x": 321,
+              "y": 102,
+              "width": 68,
+              "height": 74
+            },
+            "centroid": {
+              "x": 356.5,
+              "y": 140.2
+            },
+            "pixel_area": 2794,
+            "area_percentage": 1.746,
+            "region_mean_score": 18.4672,
+            "region_peak_score": 19.5951,
+            "relative_contrast": 5.1746,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 4,
+            "label": "Estimated Anomalous Region #4",
+            "bounding_box": {
+              "x": 161,
+              "y": 50,
+              "width": 79,
+              "height": 65
+            },
+            "centroid": {
+              "x": 203.6,
+              "y": 82.5
+            },
+            "pixel_area": 2539,
+            "area_percentage": 1.587,
+            "region_mean_score": 18.1895,
+            "region_peak_score": 19.0409,
+            "relative_contrast": 4.6204,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 5,
+            "label": "Estimated Anomalous Region #5",
+            "bounding_box": {
+              "x": 185,
+              "y": 251,
+              "width": 52,
+              "height": 56
+            },
+            "centroid": {
+              "x": 208.8,
+              "y": 279.7
+            },
+            "pixel_area": 1780,
+            "area_percentage": 1.113,
+            "region_mean_score": 18.3982,
+            "region_peak_score": 19.5779,
+            "relative_contrast": 5.1574,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 6,
+            "label": "Estimated Anomalous Region #6",
+            "bounding_box": {
+              "x": 204,
+              "y": 208,
+              "width": 24,
+              "height": 36
+            },
+            "centroid": {
+              "x": 215.8,
+              "y": 225.1
+            },
+            "pixel_area": 458,
+            "area_percentage": 0.286,
+            "region_mean_score": 17.8945,
+            "region_peak_score": 18.5027,
+            "relative_contrast": 4.0822,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_good_0000.png"
+    },
+    {
+      "category": "good",
+      "filename": "0001.png",
+      "description": "Nominal Clean Engine Harness #2",
+      "baseline": {
+        "anomaly_score": 20.4848,
+        "threshold": 23.4457,
+        "is_anomaly": false,
+        "prediction": "NORMAL"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 13.9154,
+        "bg_estimated_std": 1.1816,
+        "peak_score": 20.466,
+        "spatial_contrast_diff": 6.5506,
+        "relative_contrast_ratio": 1.4707,
+        "contrast_z_score": 5.54,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 5,
+        "total_anomalous_pixels": 18406,
+        "total_cluster_area_pct": 11.504,
+        "largest_cluster_area_px": 9154,
+        "largest_cluster_area_pct": 5.721,
+        "largest_cluster_peak_score": 20.466,
+        "clusters": [
+          {
+            "id": 1,
+            "bbox": [
+              132,
+              0,
+              116,
+              120
+            ],
+            "centroid": [
+              192.1,
+              60.7
+            ],
+            "pixel_area": 9154,
+            "area_pct": 5.721,
+            "region_mean_score": 18.2955,
+            "region_max_score": 20.466
+          },
+          {
+            "id": 4,
+            "bbox": [
+              125,
+              323,
+              93,
+              77
+            ],
+            "centroid": [
+              172.9,
+              366.3
+            ],
+            "pixel_area": 4123,
+            "area_pct": 2.577,
+            "region_mean_score": 17.5715,
+            "region_max_score": 19.1101
+          },
+          {
+            "id": 5,
+            "bbox": [
+              296,
+              334,
+              104,
+              66
+            ],
+            "centroid": [
+              354.8,
+              367.7
+            ],
+            "pixel_area": 2997,
+            "area_pct": 1.873,
+            "region_mean_score": 17.6054,
+            "region_max_score": 18.7683
+          },
+          {
+            "id": 2,
+            "bbox": [
+              148,
+              174,
+              51,
+              57
+            ],
+            "centroid": [
+              178.2,
+              198.4
+            ],
+            "pixel_area": 1703,
+            "area_pct": 1.064,
+            "region_mean_score": 17.3145,
+            "region_max_score": 18.0624
+          },
+          {
+            "id": 3,
+            "bbox": [
+              144,
+              278,
+              24,
+              23
+            ],
+            "centroid": [
+              156.0,
+              289.9
+            ],
+            "pixel_area": 429,
+            "area_pct": 0.268,
+            "region_mean_score": 17.2978,
+            "region_max_score": 18.0189
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 20.466,
+        "mean_anomaly_score": 14.6968,
+        "num_suspicious_regions": 5,
+        "total_suspicious_area_pct": 11.504,
+        "largest_region_area_px": 9154,
+        "largest_region_area_pct": 5.721,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 132,
+              "y": 0,
+              "width": 116,
+              "height": 120
+            },
+            "centroid": {
+              "x": 192.1,
+              "y": 60.7
+            },
+            "pixel_area": 9154,
+            "area_percentage": 5.721,
+            "region_mean_score": 18.2955,
+            "region_peak_score": 20.466,
+            "relative_contrast": 6.5506,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 125,
+              "y": 323,
+              "width": 93,
+              "height": 77
+            },
+            "centroid": {
+              "x": 172.9,
+              "y": 366.3
+            },
+            "pixel_area": 4123,
+            "area_percentage": 2.577,
+            "region_mean_score": 17.5715,
+            "region_peak_score": 19.1101,
+            "relative_contrast": 5.1947,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 3,
+            "label": "Estimated Anomalous Region #3",
+            "bounding_box": {
+              "x": 296,
+              "y": 334,
+              "width": 104,
+              "height": 66
+            },
+            "centroid": {
+              "x": 354.8,
+              "y": 367.7
+            },
+            "pixel_area": 2997,
+            "area_percentage": 1.873,
+            "region_mean_score": 17.6054,
+            "region_peak_score": 18.7683,
+            "relative_contrast": 4.8529,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 4,
+            "label": "Estimated Anomalous Region #4",
+            "bounding_box": {
+              "x": 148,
+              "y": 174,
+              "width": 51,
+              "height": 57
+            },
+            "centroid": {
+              "x": 178.2,
+              "y": 198.4
+            },
+            "pixel_area": 1703,
+            "area_percentage": 1.064,
+            "region_mean_score": 17.3145,
+            "region_peak_score": 18.0624,
+            "relative_contrast": 4.147,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 5,
+            "label": "Estimated Anomalous Region #5",
+            "bounding_box": {
+              "x": 144,
+              "y": 278,
+              "width": 24,
+              "height": 23
+            },
+            "centroid": {
+              "x": 156.0,
+              "y": 289.9
+            },
+            "pixel_area": 429,
+            "area_percentage": 0.268,
+            "region_mean_score": 17.2978,
+            "region_peak_score": 18.0189,
+            "relative_contrast": 4.1035,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_good_0001.png"
+    },
+    {
+      "category": "fastening",
+      "filename": "0000.png",
+      "description": "Fastening Defect: Unclipped Wire #1",
+      "baseline": {
+        "anomaly_score": 20.2679,
+        "threshold": 23.4457,
+        "is_anomaly": false,
+        "prediction": "NORMAL"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 14.067,
+        "bg_estimated_std": 1.4079,
+        "peak_score": 20.2327,
+        "spatial_contrast_diff": 6.1657,
+        "relative_contrast_ratio": 1.4383,
+        "contrast_z_score": 4.38,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 5,
+        "total_anomalous_pixels": 21266,
+        "total_cluster_area_pct": 13.291,
+        "largest_cluster_area_px": 14080,
+        "largest_cluster_area_pct": 8.8,
+        "largest_cluster_peak_score": 20.2327,
+        "clusters": [
+          {
+            "id": 3,
+            "bbox": [
+              156,
+              182,
+              154,
+              218
+            ],
+            "centroid": [
+              233.8,
+              293.5
+            ],
+            "pixel_area": 14080,
+            "area_pct": 8.8,
+            "region_mean_score": 18.4979,
+            "region_max_score": 20.2327
+          },
+          {
+            "id": 1,
+            "bbox": [
+              151,
+              19,
+              73,
+              93
+            ],
+            "centroid": [
+              188.8,
+              61.5
+            ],
+            "pixel_area": 4803,
+            "area_pct": 3.002,
+            "region_mean_score": 18.5967,
+            "region_max_score": 19.9296
+          },
+          {
+            "id": 5,
+            "bbox": [
+              310,
+              324,
+              76,
+              61
+            ],
+            "centroid": [
+              358.4,
+              352.1
+            ],
+            "pixel_area": 2212,
+            "area_pct": 1.383,
+            "region_mean_score": 18.0019,
+            "region_max_score": 18.4629
+          },
+          {
+            "id": 2,
+            "bbox": [
+              217,
+              101,
+              18,
+              12
+            ],
+            "centroid": [
+              223.8,
+              106.4
+            ],
+            "pixel_area": 128,
+            "area_pct": 0.08,
+            "region_mean_score": 17.7603,
+            "region_max_score": 18.0742
+          },
+          {
+            "id": 4,
+            "bbox": [
+              359,
+              305,
+              8,
+              9
+            ],
+            "centroid": [
+              362.8,
+              308.6
+            ],
+            "pixel_area": 43,
+            "area_pct": 0.027,
+            "region_mean_score": 17.6482,
+            "region_max_score": 17.7413
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 20.2327,
+        "mean_anomaly_score": 15.003,
+        "num_suspicious_regions": 5,
+        "total_suspicious_area_pct": 13.291,
+        "largest_region_area_px": 14080,
+        "largest_region_area_pct": 8.8,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 156,
+              "y": 182,
+              "width": 154,
+              "height": 218
+            },
+            "centroid": {
+              "x": 233.8,
+              "y": 293.5
+            },
+            "pixel_area": 14080,
+            "area_percentage": 8.8,
+            "region_mean_score": 18.4979,
+            "region_peak_score": 20.2327,
+            "relative_contrast": 6.1657,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 151,
+              "y": 19,
+              "width": 73,
+              "height": 93
+            },
+            "centroid": {
+              "x": 188.8,
+              "y": 61.5
+            },
+            "pixel_area": 4803,
+            "area_percentage": 3.002,
+            "region_mean_score": 18.5967,
+            "region_peak_score": 19.9296,
+            "relative_contrast": 5.8626,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 3,
+            "label": "Estimated Anomalous Region #3",
+            "bounding_box": {
+              "x": 310,
+              "y": 324,
+              "width": 76,
+              "height": 61
+            },
+            "centroid": {
+              "x": 358.4,
+              "y": 352.1
+            },
+            "pixel_area": 2212,
+            "area_percentage": 1.383,
+            "region_mean_score": 18.0019,
+            "region_peak_score": 18.4629,
+            "relative_contrast": 4.3959,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 4,
+            "label": "Estimated Anomalous Region #4",
+            "bounding_box": {
+              "x": 217,
+              "y": 101,
+              "width": 18,
+              "height": 12
+            },
+            "centroid": {
+              "x": 223.8,
+              "y": 106.4
+            },
+            "pixel_area": 128,
+            "area_percentage": 0.08,
+            "region_mean_score": 17.7603,
+            "region_peak_score": 18.0742,
+            "relative_contrast": 4.0072,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 5,
+            "label": "Estimated Anomalous Region #5",
+            "bounding_box": {
+              "x": 359,
+              "y": 305,
+              "width": 8,
+              "height": 9
+            },
+            "centroid": {
+              "x": 362.8,
+              "y": 308.6
+            },
+            "pixel_area": 43,
+            "area_percentage": 0.027,
+            "region_mean_score": 17.6482,
+            "region_peak_score": 17.7413,
+            "relative_contrast": 3.6743,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_fastening_0000.png"
+    },
+    {
+      "category": "fastening",
+      "filename": "0001.png",
+      "description": "Fastening Defect: Unclipped Wire #2",
+      "baseline": {
+        "anomaly_score": 21.2301,
+        "threshold": 23.4457,
+        "is_anomaly": false,
+        "prediction": "NORMAL"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 14.0388,
+        "bg_estimated_std": 1.5824,
+        "peak_score": 21.2034,
+        "spatial_contrast_diff": 7.1646,
+        "relative_contrast_ratio": 1.5103,
+        "contrast_z_score": 4.53,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 4,
+        "total_anomalous_pixels": 21885,
+        "total_cluster_area_pct": 13.678,
+        "largest_cluster_area_px": 12397,
+        "largest_cluster_area_pct": 7.748,
+        "largest_cluster_peak_score": 21.2034,
+        "clusters": [
+          {
+            "id": 2,
+            "bbox": [
+              150,
+              179,
+              136,
+              190
+            ],
+            "centroid": [
+              222.8,
+              264.7
+            ],
+            "pixel_area": 12397,
+            "area_pct": 7.748,
+            "region_mean_score": 18.9233,
+            "region_max_score": 21.2034
+          },
+          {
+            "id": 1,
+            "bbox": [
+              116,
+              17,
+              93,
+              94
+            ],
+            "centroid": [
+              158.9,
+              63.5
+            ],
+            "pixel_area": 5051,
+            "area_pct": 3.157,
+            "region_mean_score": 19.0846,
+            "region_max_score": 20.2836
+          },
+          {
+            "id": 3,
+            "bbox": [
+              311,
+              285,
+              72,
+              81
+            ],
+            "centroid": [
+              348.4,
+              325.2
+            ],
+            "pixel_area": 4318,
+            "area_pct": 2.699,
+            "region_mean_score": 18.7594,
+            "region_max_score": 20.0285
+          },
+          {
+            "id": 4,
+            "bbox": [
+              226,
+              370,
+              15,
+              12
+            ],
+            "centroid": [
+              233.4,
+              375.9
+            ],
+            "pixel_area": 119,
+            "area_pct": 0.074,
+            "region_mean_score": 18.2118,
+            "region_max_score": 18.676
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 21.2034,
+        "mean_anomaly_score": 15.088,
+        "num_suspicious_regions": 4,
+        "total_suspicious_area_pct": 13.678,
+        "largest_region_area_px": 12397,
+        "largest_region_area_pct": 7.748,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 150,
+              "y": 179,
+              "width": 136,
+              "height": 190
+            },
+            "centroid": {
+              "x": 222.8,
+              "y": 264.7
+            },
+            "pixel_area": 12397,
+            "area_percentage": 7.748,
+            "region_mean_score": 18.9233,
+            "region_peak_score": 21.2034,
+            "relative_contrast": 7.1646,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 116,
+              "y": 17,
+              "width": 93,
+              "height": 94
+            },
+            "centroid": {
+              "x": 158.9,
+              "y": 63.5
+            },
+            "pixel_area": 5051,
+            "area_percentage": 3.157,
+            "region_mean_score": 19.0846,
+            "region_peak_score": 20.2836,
+            "relative_contrast": 6.2448,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 3,
+            "label": "Estimated Anomalous Region #3",
+            "bounding_box": {
+              "x": 311,
+              "y": 285,
+              "width": 72,
+              "height": 81
+            },
+            "centroid": {
+              "x": 348.4,
+              "y": 325.2
+            },
+            "pixel_area": 4318,
+            "area_percentage": 2.699,
+            "region_mean_score": 18.7594,
+            "region_peak_score": 20.0285,
+            "relative_contrast": 5.9897,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 4,
+            "label": "Estimated Anomalous Region #4",
+            "bounding_box": {
+              "x": 226,
+              "y": 370,
+              "width": 15,
+              "height": 12
+            },
+            "centroid": {
+              "x": 233.4,
+              "y": 375.9
+            },
+            "pixel_area": 119,
+            "area_percentage": 0.074,
+            "region_mean_score": 18.2118,
+            "region_peak_score": 18.676,
+            "relative_contrast": 4.6372,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_fastening_0001.png"
+    },
+    {
+      "category": "fastening",
+      "filename": "0002.png",
+      "description": "Fastening Defect: Unclipped Wire #3",
+      "baseline": {
+        "anomaly_score": 22.5293,
+        "threshold": 23.4457,
+        "is_anomaly": false,
+        "prediction": "NORMAL"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 13.9691,
+        "bg_estimated_std": 1.2867,
+        "peak_score": 22.5063,
+        "spatial_contrast_diff": 8.5372,
+        "relative_contrast_ratio": 1.6111,
+        "contrast_z_score": 6.64,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 3,
+        "total_anomalous_pixels": 20598,
+        "total_cluster_area_pct": 12.874,
+        "largest_cluster_area_px": 11244,
+        "largest_cluster_area_pct": 7.028,
+        "largest_cluster_peak_score": 22.5063,
+        "clusters": [
+          {
+            "id": 2,
+            "bbox": [
+              135,
+              177,
+              123,
+              167
+            ],
+            "centroid": [
+              199.6,
+              262.3
+            ],
+            "pixel_area": 11244,
+            "area_pct": 7.028,
+            "region_mean_score": 18.9905,
+            "region_max_score": 22.5063
+          },
+          {
+            "id": 3,
+            "bbox": [
+              311,
+              303,
+              89,
+              97
+            ],
+            "centroid": [
+              358.5,
+              349.9
+            ],
+            "pixel_area": 4941,
+            "area_pct": 3.088,
+            "region_mean_score": 18.1828,
+            "region_max_score": 19.7181
+          },
+          {
+            "id": 1,
+            "bbox": [
+              143,
+              11,
+              80,
+              94
+            ],
+            "centroid": [
+              181.8,
+              56.9
+            ],
+            "pixel_area": 4413,
+            "area_pct": 2.758,
+            "region_mean_score": 18.1434,
+            "region_max_score": 19.6641
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 22.5063,
+        "mean_anomaly_score": 14.9105,
+        "num_suspicious_regions": 3,
+        "total_suspicious_area_pct": 12.874,
+        "largest_region_area_px": 11244,
+        "largest_region_area_pct": 7.028,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 135,
+              "y": 177,
+              "width": 123,
+              "height": 167
+            },
+            "centroid": {
+              "x": 199.6,
+              "y": 262.3
+            },
+            "pixel_area": 11244,
+            "area_percentage": 7.028,
+            "region_mean_score": 18.9905,
+            "region_peak_score": 22.5063,
+            "relative_contrast": 8.5372,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 311,
+              "y": 303,
+              "width": 89,
+              "height": 97
+            },
+            "centroid": {
+              "x": 358.5,
+              "y": 349.9
+            },
+            "pixel_area": 4941,
+            "area_percentage": 3.088,
+            "region_mean_score": 18.1828,
+            "region_peak_score": 19.7181,
+            "relative_contrast": 5.749,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 3,
+            "label": "Estimated Anomalous Region #3",
+            "bounding_box": {
+              "x": 143,
+              "y": 11,
+              "width": 80,
+              "height": 94
+            },
+            "centroid": {
+              "x": 181.8,
+              "y": 56.9
+            },
+            "pixel_area": 4413,
+            "area_percentage": 2.758,
+            "region_mean_score": 18.1434,
+            "region_peak_score": 19.6641,
+            "relative_contrast": 5.695,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_fastening_0002.png"
+    },
+    {
+      "category": "blue_hoop",
+      "filename": "0000.png",
+      "description": "Blue Hoop Defect: Misplaced/Missing Clip",
+      "baseline": {
+        "anomaly_score": 21.16,
+        "threshold": 23.4457,
+        "is_anomaly": false,
+        "prediction": "NORMAL"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 14.1055,
+        "bg_estimated_std": 1.5512,
+        "peak_score": 21.1375,
+        "spatial_contrast_diff": 7.032,
+        "relative_contrast_ratio": 1.4985,
+        "contrast_z_score": 4.53,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 2,
+        "total_anomalous_pixels": 24153,
+        "total_cluster_area_pct": 15.096,
+        "largest_cluster_area_px": 19786,
+        "largest_cluster_area_pct": 12.366,
+        "largest_cluster_peak_score": 21.1375,
+        "clusters": [
+          {
+            "id": 2,
+            "bbox": [
+              88,
+              171,
+              176,
+              216
+            ],
+            "centroid": [
+              183.3,
+              271.7
+            ],
+            "pixel_area": 19786,
+            "area_pct": 12.366,
+            "region_mean_score": 19.4016,
+            "region_max_score": 21.1375
+          },
+          {
+            "id": 1,
+            "bbox": [
+              144,
+              31,
+              70,
+              134
+            ],
+            "centroid": [
+              176.9,
+              85.7
+            ],
+            "pixel_area": 4367,
+            "area_pct": 2.729,
+            "region_mean_score": 19.4194,
+            "region_max_score": 21.0344
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 21.1375,
+        "mean_anomaly_score": 15.2655,
+        "num_suspicious_regions": 2,
+        "total_suspicious_area_pct": 15.096,
+        "largest_region_area_px": 19786,
+        "largest_region_area_pct": 12.366,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 88,
+              "y": 171,
+              "width": 176,
+              "height": 216
+            },
+            "centroid": {
+              "x": 183.3,
+              "y": 271.7
+            },
+            "pixel_area": 19786,
+            "area_percentage": 12.366,
+            "region_mean_score": 19.4016,
+            "region_peak_score": 21.1375,
+            "relative_contrast": 7.032,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 144,
+              "y": 31,
+              "width": 70,
+              "height": 134
+            },
+            "centroid": {
+              "x": 176.9,
+              "y": 85.7
+            },
+            "pixel_area": 4367,
+            "area_percentage": 2.729,
+            "region_mean_score": 19.4194,
+            "region_peak_score": 21.0344,
+            "relative_contrast": 6.9289,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_blue_hoop_0000.png"
+    },
+    {
+      "category": "blue_hoop",
+      "filename": "0001.png",
+      "description": "Blue Hoop Defect: Misplaced/Missing Clip #2",
+      "baseline": {
+        "anomaly_score": 22.1107,
+        "threshold": 23.4457,
+        "is_anomaly": false,
+        "prediction": "NORMAL"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 14.1352,
+        "bg_estimated_std": 1.4985,
+        "peak_score": 22.0613,
+        "spatial_contrast_diff": 7.9261,
+        "relative_contrast_ratio": 1.5607,
+        "contrast_z_score": 5.29,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 7,
+        "total_anomalous_pixels": 20152,
+        "total_cluster_area_pct": 12.595,
+        "largest_cluster_area_px": 11697,
+        "largest_cluster_area_pct": 7.311,
+        "largest_cluster_peak_score": 22.0613,
+        "clusters": [
+          {
+            "id": 5,
+            "bbox": [
+              106,
+              273,
+              153,
+              116
+            ],
+            "centroid": [
+              174.3,
+              335.3
+            ],
+            "pixel_area": 11697,
+            "area_pct": 7.311,
+            "region_mean_score": 19.5923,
+            "region_max_score": 22.0613
+          },
+          {
+            "id": 3,
+            "bbox": [
+              161,
+              186,
+              66,
+              74
+            ],
+            "centroid": [
+              195.3,
+              218.5
+            ],
+            "pixel_area": 3293,
+            "area_pct": 2.058,
+            "region_mean_score": 18.9256,
+            "region_max_score": 20.3238
+          },
+          {
+            "id": 1,
+            "bbox": [
+              191,
+              17,
+              50,
+              86
+            ],
+            "centroid": [
+              216.0,
+              54.9
+            ],
+            "pixel_area": 2557,
+            "area_pct": 1.598,
+            "region_mean_score": 18.5974,
+            "region_max_score": 19.4778
+          },
+          {
+            "id": 4,
+            "bbox": [
+              348,
+              256,
+              36,
+              95
+            ],
+            "centroid": [
+              368.0,
+              309.0
+            ],
+            "pixel_area": 2087,
+            "area_pct": 1.304,
+            "region_mean_score": 18.5637,
+            "region_max_score": 19.4018
+          },
+          {
+            "id": 7,
+            "bbox": [
+              272,
+              359,
+              26,
+              11
+            ],
+            "centroid": [
+              285.0,
+              364.3
+            ],
+            "pixel_area": 224,
+            "area_pct": 0.14,
+            "region_mean_score": 18.2705,
+            "region_max_score": 18.5665
+          },
+          {
+            "id": 6,
+            "bbox": [
+              320,
+              354,
+              18,
+              14
+            ],
+            "centroid": [
+              327.5,
+              362.2
+            ],
+            "pixel_area": 148,
+            "area_pct": 0.092,
+            "region_mean_score": 18.1727,
+            "region_max_score": 18.3542
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 22.0613,
+        "mean_anomaly_score": 15.1981,
+        "num_suspicious_regions": 6,
+        "total_suspicious_area_pct": 12.595,
+        "largest_region_area_px": 11697,
+        "largest_region_area_pct": 7.311,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 106,
+              "y": 273,
+              "width": 153,
+              "height": 116
+            },
+            "centroid": {
+              "x": 174.3,
+              "y": 335.3
+            },
+            "pixel_area": 11697,
+            "area_percentage": 7.311,
+            "region_mean_score": 19.5923,
+            "region_peak_score": 22.0613,
+            "relative_contrast": 7.9261,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 161,
+              "y": 186,
+              "width": 66,
+              "height": 74
+            },
+            "centroid": {
+              "x": 195.3,
+              "y": 218.5
+            },
+            "pixel_area": 3293,
+            "area_percentage": 2.058,
+            "region_mean_score": 18.9256,
+            "region_peak_score": 20.3238,
+            "relative_contrast": 6.1886,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 3,
+            "label": "Estimated Anomalous Region #3",
+            "bounding_box": {
+              "x": 191,
+              "y": 17,
+              "width": 50,
+              "height": 86
+            },
+            "centroid": {
+              "x": 216.0,
+              "y": 54.9
+            },
+            "pixel_area": 2557,
+            "area_percentage": 1.598,
+            "region_mean_score": 18.5974,
+            "region_peak_score": 19.4778,
+            "relative_contrast": 5.3426,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 4,
+            "label": "Estimated Anomalous Region #4",
+            "bounding_box": {
+              "x": 348,
+              "y": 256,
+              "width": 36,
+              "height": 95
+            },
+            "centroid": {
+              "x": 368.0,
+              "y": 309.0
+            },
+            "pixel_area": 2087,
+            "area_percentage": 1.304,
+            "region_mean_score": 18.5637,
+            "region_peak_score": 19.4018,
+            "relative_contrast": 5.2666,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Linear / Wire Pattern"
+          },
+          {
+            "region_id": 5,
+            "label": "Estimated Anomalous Region #5",
+            "bounding_box": {
+              "x": 272,
+              "y": 359,
+              "width": 26,
+              "height": 11
+            },
+            "centroid": {
+              "x": 285.0,
+              "y": 364.3
+            },
+            "pixel_area": 224,
+            "area_percentage": 0.14,
+            "region_mean_score": 18.2705,
+            "region_peak_score": 18.5665,
+            "relative_contrast": 4.4313,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Linear / Wire Pattern"
+          },
+          {
+            "region_id": 6,
+            "label": "Estimated Anomalous Region #6",
+            "bounding_box": {
+              "x": 320,
+              "y": 354,
+              "width": 18,
+              "height": 14
+            },
+            "centroid": {
+              "x": 327.5,
+              "y": 362.2
+            },
+            "pixel_area": 148,
+            "area_percentage": 0.092,
+            "region_mean_score": 18.1727,
+            "region_peak_score": 18.3542,
+            "relative_contrast": 4.219,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_blue_hoop_0001.png"
+    },
+    {
+      "category": "obstruction",
+      "filename": "0000.png",
+      "description": "Foreign Obstruction Defect #1",
+      "baseline": {
+        "anomaly_score": 22.7998,
+        "threshold": 23.4457,
+        "is_anomaly": false,
+        "prediction": "NORMAL"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 14.7345,
+        "bg_estimated_std": 1.8565,
+        "peak_score": 22.7719,
+        "spatial_contrast_diff": 8.0374,
+        "relative_contrast_ratio": 1.5455,
+        "contrast_z_score": 4.33,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 3,
+        "total_anomalous_pixels": 21867,
+        "total_cluster_area_pct": 13.667,
+        "largest_cluster_area_px": 21038,
+        "largest_cluster_area_pct": 13.149,
+        "largest_cluster_peak_score": 22.7719,
+        "clusters": [
+          {
+            "id": 2,
+            "bbox": [
+              142,
+              149,
+              239,
+              237
+            ],
+            "centroid": [
+              232.0,
+              280.3
+            ],
+            "pixel_area": 21038,
+            "area_pct": 13.149,
+            "region_mean_score": 20.4379,
+            "region_max_score": 22.7719
+          },
+          {
+            "id": 1,
+            "bbox": [
+              173,
+              21,
+              30,
+              54
+            ],
+            "centroid": [
+              187.7,
+              45.0
+            ],
+            "pixel_area": 775,
+            "area_pct": 0.484,
+            "region_mean_score": 19.5733,
+            "region_max_score": 20.2851
+          },
+          {
+            "id": 3,
+            "bbox": [
+              302,
+              191,
+              13,
+              6
+            ],
+            "centroid": [
+              307.9,
+              193.3
+            ],
+            "pixel_area": 54,
+            "area_pct": 0.034,
+            "region_mean_score": 19.449,
+            "region_max_score": 19.5965
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 22.7719,
+        "mean_anomaly_score": 15.959,
+        "num_suspicious_regions": 3,
+        "total_suspicious_area_pct": 13.667,
+        "largest_region_area_px": 21038,
+        "largest_region_area_pct": 13.149,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 142,
+              "y": 149,
+              "width": 239,
+              "height": 237
+            },
+            "centroid": {
+              "x": 232.0,
+              "y": 280.3
+            },
+            "pixel_area": 21038,
+            "area_percentage": 13.149,
+            "region_mean_score": 20.4379,
+            "region_peak_score": 22.7719,
+            "relative_contrast": 8.0374,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 173,
+              "y": 21,
+              "width": 30,
+              "height": 54
+            },
+            "centroid": {
+              "x": 187.7,
+              "y": 45.0
+            },
+            "pixel_area": 775,
+            "area_percentage": 0.484,
+            "region_mean_score": 19.5733,
+            "region_peak_score": 20.2851,
+            "relative_contrast": 5.5506,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 3,
+            "label": "Estimated Anomalous Region #3",
+            "bounding_box": {
+              "x": 302,
+              "y": 191,
+              "width": 13,
+              "height": 6
+            },
+            "centroid": {
+              "x": 307.9,
+              "y": 193.3
+            },
+            "pixel_area": 54,
+            "area_percentage": 0.034,
+            "region_mean_score": 19.449,
+            "region_peak_score": 19.5965,
+            "relative_contrast": 4.862,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Linear / Wire Pattern"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_obstruction_0000.png"
+    },
+    {
+      "category": "obstruction",
+      "filename": "0001.png",
+      "description": "Foreign Obstruction Defect #2",
+      "baseline": {
+        "anomaly_score": 22.2293,
+        "threshold": 23.4457,
+        "is_anomaly": false,
+        "prediction": "NORMAL"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 14.9603,
+        "bg_estimated_std": 1.6675,
+        "peak_score": 22.1657,
+        "spatial_contrast_diff": 7.2053,
+        "relative_contrast_ratio": 1.4816,
+        "contrast_z_score": 4.32,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 5,
+        "total_anomalous_pixels": 17775,
+        "total_cluster_area_pct": 11.109,
+        "largest_cluster_area_px": 12300,
+        "largest_cluster_area_pct": 7.688,
+        "largest_cluster_peak_score": 22.1657,
+        "clusters": [
+          {
+            "id": 5,
+            "bbox": [
+              153,
+              191,
+              144,
+              193
+            ],
+            "centroid": [
+              221.7,
+              299.2
+            ],
+            "pixel_area": 12300,
+            "area_pct": 7.688,
+            "region_mean_score": 19.6702,
+            "region_max_score": 22.1657
+          },
+          {
+            "id": 2,
+            "bbox": [
+              187,
+              34,
+              84,
+              112
+            ],
+            "centroid": [
+              231.1,
+              87.2
+            ],
+            "pixel_area": 4735,
+            "area_pct": 2.959,
+            "region_mean_score": 19.5148,
+            "region_max_score": 20.9095
+          },
+          {
+            "id": 1,
+            "bbox": [
+              270,
+              22,
+              18,
+              27
+            ],
+            "centroid": [
+              278.4,
+              35.1
+            ],
+            "pixel_area": 374,
+            "area_pct": 0.234,
+            "region_mean_score": 19.2543,
+            "region_max_score": 20.5116
+          },
+          {
+            "id": 3,
+            "bbox": [
+              277,
+              143,
+              23,
+              25
+            ],
+            "centroid": [
+              290.1,
+              155.1
+            ],
+            "pixel_area": 277,
+            "area_pct": 0.173,
+            "region_mean_score": 18.8792,
+            "region_max_score": 19.3163
+          },
+          {
+            "id": 4,
+            "bbox": [
+              356,
+              144,
+              13,
+              12
+            ],
+            "centroid": [
+              362.3,
+              149.4
+            ],
+            "pixel_area": 89,
+            "area_pct": 0.056,
+            "region_mean_score": 18.9011,
+            "region_max_score": 19.1931
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 22.1657,
+        "mean_anomaly_score": 15.9187,
+        "num_suspicious_regions": 5,
+        "total_suspicious_area_pct": 11.109,
+        "largest_region_area_px": 12300,
+        "largest_region_area_pct": 7.688,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 153,
+              "y": 191,
+              "width": 144,
+              "height": 193
+            },
+            "centroid": {
+              "x": 221.7,
+              "y": 299.2
+            },
+            "pixel_area": 12300,
+            "area_percentage": 7.688,
+            "region_mean_score": 19.6702,
+            "region_peak_score": 22.1657,
+            "relative_contrast": 7.2054,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 187,
+              "y": 34,
+              "width": 84,
+              "height": 112
+            },
+            "centroid": {
+              "x": 231.1,
+              "y": 87.2
+            },
+            "pixel_area": 4735,
+            "area_percentage": 2.959,
+            "region_mean_score": 19.5148,
+            "region_peak_score": 20.9095,
+            "relative_contrast": 5.9492,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 3,
+            "label": "Estimated Anomalous Region #3",
+            "bounding_box": {
+              "x": 270,
+              "y": 22,
+              "width": 18,
+              "height": 27
+            },
+            "centroid": {
+              "x": 278.4,
+              "y": 35.1
+            },
+            "pixel_area": 374,
+            "area_percentage": 0.234,
+            "region_mean_score": 19.2543,
+            "region_peak_score": 20.5116,
+            "relative_contrast": 5.5513,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 4,
+            "label": "Estimated Anomalous Region #4",
+            "bounding_box": {
+              "x": 277,
+              "y": 143,
+              "width": 23,
+              "height": 25
+            },
+            "centroid": {
+              "x": 290.1,
+              "y": 155.1
+            },
+            "pixel_area": 277,
+            "area_percentage": 0.173,
+            "region_mean_score": 18.8792,
+            "region_peak_score": 19.3163,
+            "relative_contrast": 4.356,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 5,
+            "label": "Estimated Anomalous Region #5",
+            "bounding_box": {
+              "x": 356,
+              "y": 144,
+              "width": 13,
+              "height": 12
+            },
+            "centroid": {
+              "x": 362.3,
+              "y": 149.4
+            },
+            "pixel_area": 89,
+            "area_percentage": 0.056,
+            "region_mean_score": 18.9011,
+            "region_peak_score": 19.1931,
+            "relative_contrast": 4.2328,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_obstruction_0001.png"
+    },
+    {
+      "category": "multiple",
+      "filename": "0000.png",
+      "description": "Multiple Wiring & Clip Defects",
+      "baseline": {
+        "anomaly_score": 24.7126,
+        "threshold": 23.4457,
+        "is_anomaly": true,
+        "prediction": "DEFECTIVE"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 15.2098,
+        "bg_estimated_std": 1.9901,
+        "peak_score": 24.6821,
+        "spatial_contrast_diff": 9.4723,
+        "relative_contrast_ratio": 1.6228,
+        "contrast_z_score": 4.76,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 4,
+        "total_anomalous_pixels": 22461,
+        "total_cluster_area_pct": 14.038,
+        "largest_cluster_area_px": 15092,
+        "largest_cluster_area_pct": 9.433,
+        "largest_cluster_peak_score": 24.6821,
+        "clusters": [
+          {
+            "id": 3,
+            "bbox": [
+              85,
+              189,
+              138,
+              202
+            ],
+            "centroid": [
+              151.7,
+              303.5
+            ],
+            "pixel_area": 15092,
+            "area_pct": 9.433,
+            "region_mean_score": 21.5777,
+            "region_max_score": 24.6821
+          },
+          {
+            "id": 1,
+            "bbox": [
+              192,
+              21,
+              108,
+              97
+            ],
+            "centroid": [
+              249.7,
+              65.5
+            ],
+            "pixel_area": 5972,
+            "area_pct": 3.732,
+            "region_mean_score": 21.565,
+            "region_max_score": 23.544
+          },
+          {
+            "id": 4,
+            "bbox": [
+              358,
+              268,
+              31,
+              45
+            ],
+            "centroid": [
+              373.7,
+              290.4
+            ],
+            "pixel_area": 988,
+            "area_pct": 0.617,
+            "region_mean_score": 21.457,
+            "region_max_score": 23.1905
+          },
+          {
+            "id": 2,
+            "bbox": [
+              227,
+              158,
+              23,
+              31
+            ],
+            "centroid": [
+              237.5,
+              170.2
+            ],
+            "pixel_area": 409,
+            "area_pct": 0.256,
+            "region_mean_score": 20.6055,
+            "region_max_score": 21.0877
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 24.6821,
+        "mean_anomaly_score": 16.5886,
+        "num_suspicious_regions": 4,
+        "total_suspicious_area_pct": 14.038,
+        "largest_region_area_px": 15092,
+        "largest_region_area_pct": 9.433,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 85,
+              "y": 189,
+              "width": 138,
+              "height": 202
+            },
+            "centroid": {
+              "x": 151.7,
+              "y": 303.5
+            },
+            "pixel_area": 15092,
+            "area_percentage": 9.433,
+            "region_mean_score": 21.5777,
+            "region_peak_score": 24.6821,
+            "relative_contrast": 9.4723,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 192,
+              "y": 21,
+              "width": 108,
+              "height": 97
+            },
+            "centroid": {
+              "x": 249.7,
+              "y": 65.5
+            },
+            "pixel_area": 5972,
+            "area_percentage": 3.732,
+            "region_mean_score": 21.565,
+            "region_peak_score": 23.544,
+            "relative_contrast": 8.3342,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 3,
+            "label": "Estimated Anomalous Region #3",
+            "bounding_box": {
+              "x": 358,
+              "y": 268,
+              "width": 31,
+              "height": 45
+            },
+            "centroid": {
+              "x": 373.7,
+              "y": 290.4
+            },
+            "pixel_area": 988,
+            "area_percentage": 0.617,
+            "region_mean_score": 21.457,
+            "region_peak_score": 23.1905,
+            "relative_contrast": 7.9807,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          },
+          {
+            "region_id": 4,
+            "label": "Estimated Anomalous Region #4",
+            "bounding_box": {
+              "x": 227,
+              "y": 158,
+              "width": 23,
+              "height": 31
+            },
+            "centroid": {
+              "x": 237.5,
+              "y": 170.2
+            },
+            "pixel_area": 409,
+            "area_percentage": 0.256,
+            "region_mean_score": 20.6055,
+            "region_peak_score": 21.0877,
+            "relative_contrast": 5.8779,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_multiple_0000.png"
+    },
+    {
+      "category": "cardboard",
+      "filename": "0000.png",
+      "description": "Cardboard Packaging Foreign Object",
+      "baseline": {
+        "anomaly_score": 26.4367,
+        "threshold": 23.4457,
+        "is_anomaly": true,
+        "prediction": "DEFECTIVE"
+      },
+      "experimental_method_a_spatial_contrast": {
+        "bg_estimated_mean": 15.4546,
+        "bg_estimated_std": 2.0136,
+        "peak_score": 26.4166,
+        "spatial_contrast_diff": 10.962,
+        "relative_contrast_ratio": 1.7093,
+        "contrast_z_score": 5.44,
+        "has_local_elevation": true,
+        "contrast_status": "Locally Elevated Contrast",
+        "caveat": "Experimental research indicator. Measures spatial contrast over estimated background. Does not override baseline decision."
+      },
+      "experimental_method_b_cluster_aggregation": {
+        "cluster_count": 2,
+        "total_anomalous_pixels": 26376,
+        "total_cluster_area_pct": 16.485,
+        "largest_cluster_area_px": 24391,
+        "largest_cluster_area_pct": 15.244,
+        "largest_cluster_peak_score": 26.4166,
+        "clusters": [
+          {
+            "id": 1,
+            "bbox": [
+              132,
+              7,
+              169,
+              382
+            ],
+            "centroid": [
+              201.1,
+              217.2
+            ],
+            "pixel_area": 24391,
+            "area_pct": 15.244,
+            "region_mean_score": 22.7773,
+            "region_max_score": 26.4166
+          },
+          {
+            "id": 2,
+            "bbox": [
+              337,
+              313,
+              52,
+              50
+            ],
+            "centroid": [
+              363.3,
+              336.4
+            ],
+            "pixel_area": 1985,
+            "area_pct": 1.241,
+            "region_mean_score": 23.2787,
+            "region_max_score": 25.635
+          }
+        ],
+        "has_coherent_cluster": true,
+        "caveat": "Experimental cluster analysis. Identifies spatially contiguous anomaly patterns. Research metric only."
+      },
+      "region_analysis": {
+        "highest_anomaly_score": 26.4166,
+        "mean_anomaly_score": 17.111,
+        "num_suspicious_regions": 2,
+        "total_suspicious_area_pct": 16.485,
+        "largest_region_area_px": 24391,
+        "largest_region_area_pct": 15.244,
+        "regions": [
+          {
+            "region_id": 1,
+            "label": "Estimated Anomalous Region #1",
+            "bounding_box": {
+              "x": 132,
+              "y": 7,
+              "width": 169,
+              "height": 382
+            },
+            "centroid": {
+              "x": 201.1,
+              "y": 217.2
+            },
+            "pixel_area": 24391,
+            "area_percentage": 15.244,
+            "region_mean_score": 22.7773,
+            "region_peak_score": 26.4166,
+            "relative_contrast": 10.962,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Linear / Wire Pattern"
+          },
+          {
+            "region_id": 2,
+            "label": "Estimated Anomalous Region #2",
+            "bounding_box": {
+              "x": 337,
+              "y": 313,
+              "width": 52,
+              "height": 50
+            },
+            "centroid": {
+              "x": 363.3,
+              "y": 336.4
+            },
+            "pixel_area": 1985,
+            "area_percentage": 1.241,
+            "region_mean_score": 23.2787,
+            "region_peak_score": 25.635,
+            "relative_contrast": 10.1804,
+            "status_flag": "Requires Manual Inspection",
+            "morphology": "Compact Cluster"
+          }
+        ]
+      },
+      "annotated_image_path": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\annotated_cardboard_0000.png"
+    }
+  ]
+}

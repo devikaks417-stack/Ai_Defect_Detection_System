@@ -1,0 +1,21 @@
+{
+  "test1_navigation_sections": "PASSED",
+  "test2_benchmark_normal": "PASSED",
+  "test3_benchmark_cardboard": "PASSED",
+  "test4_benchmark_fastening": "PASSED",
+  "test5_benchmark_blue_hoop": "PASSED",
+  "test6_benchmark_multiple": "PASSED",
+  "test7_benchmark_obstruction": "PASSED",
+  "test8_manual_upload": "PASSED",
+  "test9_invalid_upload": "PASSED",
+  "test10_inspection_history": "PASSED",
+  "test11_inspection_analytics": "PASSED",
+  "test12_downloadable_report_html": "PASSED",
+  "test13_downloadable_report_json": "PASSED",
+  "test14_responsive_screenshots": {
+    "desktop_1440px": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\screenshot_desktop_1440px.png",
+    "laptop_1024px": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\screenshot_laptop_1024px.png",
+    "mobile_390px": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\screenshot_mobile_390px.png",
+    "mobile_320px": "C:\\Users\\DEVIKA K S\\Downloads\\AI_Defect_Detection_System\\outputs\\phase4_2_experiments\\screenshot_mobile_320px.png"
+  }
+}

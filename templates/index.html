@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROMETHEUS-X | Intelligent Industrial Quality Inspection Platform</title>
+    <meta name="description"
+        content="Precision Intelligence for Industrial Quality: Automotive visual anomaly detection and quality assurance platform powered by PatchCore AI.">
+    <link rel="stylesheet" href="/static/css/style.css?v=2">
+    <link rel="stylesheet" href="/static/css/responsive.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Mobile Drawer Backdrop -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Main Application Shell -->
+    <div class="app-layout" id="appLayout">
+
+        <!-- ============================================================== -->
+        <!-- DEEP OBSIDIAN SIDEBAR NAVIGATION                              -->
+        <!-- ============================================================== -->
+        <aside class="app-sidebar" id="appSidebar">
+            <div class="sidebar-header">
+                <div class="brand-wrapper">
+                    <div class="brand-logo-mark">
+                        <svg viewBox="0 0 36 36" width="24" height="24">
+                            <defs>
+                                <linearGradient id="pxHex" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#22D3EE" />
+                                    <stop offset="50%" stop-color="#3B82F6" />
+                                    <stop offset="100%" stop-color="#A855F7" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="none" stroke="url(#pxHex)"
+                                stroke-width="2.4" />
+                            <circle cx="18" cy="18" r="5.5" fill="none" stroke="#22D3EE" stroke-width="2" />
+                            <circle cx="18" cy="18" r="2" fill="#A855F7" />
+                        </svg>
+                    </div>
+                    <div class="brand-meta">
+                        <span class="brand-title">PROMETHEUS<span>-X</span></span>
+                        <span class="brand-tagline">Open-Set Vision AI</span>
+                    </div>
+                </div>
+                <button class="sidebar-toggle-btn" id="sidebarCollapseBtn" title="Collapse sidebar"
+                    aria-label="Toggle sidebar collapse">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">PLATFORM</div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-section="overview">
+                            <span class="nav-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </span>
+                            <span class="nav-label">Overview</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-section="inspection">
+                            <span class="nav-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="22" y1="12" x2="18" y2="12"></line>
+                                    <line x1="6" y1="12" x2="2" y2="12"></line>
+                                    <line x1="12" y1="6" x2="12" y2="2"></line>
+                                    <line x1="12" y1="22" x2="12" y2="18"></line>
+                                </svg>
+                            </span>
+                            <span class="nav-label">AI Inspection</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-section="benchmarks">
+                            <span class="nav-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                </svg>
+                            </span>
+                            <span class="nav-label">Benchmark Testing</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-section="analytics">
+                            <span class="nav-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </span>
+                            <span class="nav-label">Analytics & Telemetry</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-section="history">
+                            <span class="nav-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </span>
+                            <span class="nav-label">Inspection History</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-section="reports">
+                            <span class="nav-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </span>
+                            <span class="nav-label">Reports</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="nav-section-label">SYSTEM & DOCS</div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <button class="nav-link" data-section="model">
+                            <span class="nav-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                </svg>
+                            </span>
+                            <span class="nav-label">Model Architecture</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-section="about">
+                            <span class="nav-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                            </span>
+                            <span class="nav-label">About PROMETHEUS-X</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Sidebar Footer Status -->
+            <div class="sidebar-footer">
+                <div class="footer-telemetry">
+                    <div class="telemetry-row">
+                        <span class="telemetry-label">Status:</span>
+                        <span class="telemetry-val"><span class="status-indicator-dot online"></span>Active</span>
+                    </div>
+                    <div class="telemetry-row">
+                        <span class="telemetry-label">Engine:</span>
+                        <span class="telemetry-val">PatchCore CUDA</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ============================================================== -->
+        <!-- MAIN CONTENT WORKSPACE                                         -->
+        <!-- ============================================================== -->
+        <div class="app-main">
+
+            <!-- Top Header Bar with Domain Selector -->
+            <header class="app-topbar">
+                <div class="topbar-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div class="breadcrumbs">
+                        <span class="crumb-root">PROMETHEUS-X</span>
+                        <span class="crumb-separator">/</span>
+                        <span class="crumb-current" id="crumbCurrent">Overview</span>
+                    </div>
+                </div>
+
+
+                <div class="topbar-right">
+                    <!-- Status Badges -->
+                    <div class="system-pill" title="PyTorch PatchCore Engine Ready">
+                        <span class="pulse-dot"></span>
+                        <span class="pill-text">AI Engine Online</span>
+                    </div>
+                    <div class="model-pill" title="Pretrained Frozen ResNet-50 Feature Extractor">
+                        <span class="pill-label">Backbone:</span>
+                        <span class="pill-val">ResNet-50</span>
+                    </div>
+
+                    <!-- Quick Action -->
+                    <button class="btn btn-primary btn-sm" id="topbarActionBtn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>New Inspection</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Scrollable Page Container -->
+            <main class="page-container" id="pageContainer">
+
+                <!-- ============================================================== -->
+                <!-- PAGE 1: PRODUCT OVERVIEW                                       -->
+                <!-- ============================================================== -->
+                <section class="page-section active" id="section-overview">
+                    <div class="section-hero">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Industrial Inspection Overview</h1>
+                            <p class="hero-subtitle">Open-Set Vision AI: Monitor visual inspections, anomaly heatmaps,
+                                and quality performance in real time.</p>
+                        </div>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary" id="btnHeroStartInspection">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Launch AI Inspection</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Real-Time KPI Metric Cards (Mirroring MetricCard.jsx) -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">TOTAL INSPECTIONS</span>
+                                <span class="kpi-badge primary">Live Session</span>
+                            </div>
+                            <div class="kpi-value mono" id="kpiTotalInspections">0</div>
+                            <div class="kpi-trend neutral"><span>Live session counter</span></div>
+                        </div>
+
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">NORMAL VERIFIED</span>
+                                <span class="kpi-badge success">Nominal</span>
+                            </div>
+                            <div class="kpi-value mono" style="color:#34D399" id="kpiNormalCount">0</div>
+                            <div class="kpi-trend positive" id="kpiNormalRate"><span>0.0% nominal rate</span></div>
+                        </div>
+
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">POTENTIAL DEFECTS</span>
+                                <span class="kpi-badge warning">Flagged</span>
+                            </div>
+                            <div class="kpi-value mono" style="color:#F87171" id="kpiDefectCount">0</div>
+                            <div class="kpi-trend warning" id="kpiDefectRate"><span>0.0% anomaly rate</span></div>
+                        </div>
+
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">AVG ANOMALY SCORE</span>
+                                <span class="kpi-badge info">PatchCore</span>
+                            </div>
+                            <div class="kpi-value mono" style="color:#22D3EE" id="kpiAvgScore">0.00</div>
+                            <div class="kpi-trend info"><span>Threshold: {{ metrics.threshold }}</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Benchmark Baseline Performance Banner -->
+                    <div class="benchmark-performance-card">
+                        <div class="benchmark-card-header">
+                            <div>
+                                <h3 class="benchmark-title">Empirical Benchmark Verification (AutoVI Dataset)</h3>
+                                <p class="benchmark-subtitle">Validated across 607 real automotive engine wiring images
+                                    (285 normal, 322 defective).</p>
+                            </div>
+                            <span class="benchmark-tag">Frozen ResNet-50 Baseline</span>
+                        </div>
+                        <div class="benchmark-metrics-grid">
+                            <div class="benchmark-metric-item">
+                                <div class="benchmark-val" style="color:#22D3EE">{{ metrics.image_auroc }}</div>
+                                <div class="benchmark-lbl">Image-level AUROC</div>
+                            </div>
+                            <div class="benchmark-metric-item">
+                                <div class="benchmark-val" style="color:#22D3EE">{{ metrics.pixel_auroc }}</div>
+                                <div class="benchmark-lbl">Pixel-level AUROC</div>
+                            </div>
+                            <div class="benchmark-metric-item">
+                                <div class="benchmark-val" style="color:#34D399">{{ metrics.precision }}%</div>
+                                <div class="benchmark-lbl">Precision (1.05% False Alarm)</div>
+                            </div>
+                            <div class="benchmark-metric-item">
+                                <div class="benchmark-val" style="color:#FBBF24">{{ metrics.recall }}%</div>
+                                <div class="benchmark-lbl">Recall (3-Sigma Envelope)</div>
+                            </div>
+                            <div class="benchmark-metric-item">
+                                <div class="benchmark-val mono" style="color:#C084FC">{{ metrics.threshold }}</div>
+                                <div class="benchmark-lbl">Calibrated Threshold (&mu;+3&sigma;)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Grid: Activity & Outcomes -->
+                    <div class="analytics-grid">
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <div>
+                                    <h3 class="card-title-sm">Inspection Activity Over Time</h3>
+                                    <p class="hero-subtitle">Real-time session throughput and defect detection trend.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="chart-canvas-wrap">
+                                <canvas id="chartOverviewActivity"></canvas>
+                                <div class="chart-empty-state" id="chartOverviewActivityEmpty"
+                                    style="display:none; text-align:center; padding:40px; color:var(--text-muted)">
+                                    <span>Perform inspections to visualize real-time throughput trend.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <div>
+                                    <h3 class="card-title-sm">Inspection Outcome Distribution</h3>
+                                    <p class="hero-subtitle">Normal vs Potential Defect breakdown.</p>
+                                </div>
+                            </div>
+                            <div class="chart-canvas-wrap">
+                                <canvas id="chartOverviewOutcomes"></canvas>
+                                <div class="chart-empty-state" id="chartOverviewOutcomesEmpty"
+                                    style="display:none; text-align:center; padding:40px; color:var(--text-muted)">
+                                    <span>No inspection records yet.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Performance & Recent Inspections Grid -->
+                    <div class="analytics-grid">
+                        <!-- Category Benchmark Bar Chart -->
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <div>
+                                    <h3 class="card-title-sm">Benchmark Category Anomaly Scores</h3>
+                                    <p class="hero-subtitle">Empirical score means across AutoVI defect classes.</p>
+                                </div>
+                            </div>
+                            <div class="chart-canvas-wrap">
+                                <canvas id="chartOverviewCategories"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Recent Inspections Table -->
+                        <div class="history-card">
+                            <div class="history-toolbar">
+                                <div>
+                                    <h3 class="card-title-sm">Recent Inspection Records</h3>
+                                    <p class="hero-subtitle">Latest session activity and anomaly scores.</p>
+                                </div>
+                                <button class="btn btn-secondary btn-sm" id="btnViewAllHistory">View All
+                                    History</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Sample / File</th>
+                                            <th>Score</th>
+                                            <th>Outcome</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="overviewRecentTableBody">
+                                        <tr>
+                                            <td colspan="5"
+                                                style="text-align:center; color:var(--text-muted); padding:20px;">No
+                                                inspections performed yet. Click "Launch AI Inspection" above to begin.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================================================== -->
+                <!-- PAGE 2: AI INSPECTION WORKSPACE (4 VIEWING MODES)              -->
+                <!-- ============================================================== -->
+                <section class="page-section" id="section-inspection">
+                    <div class="section-hero">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Automotive AI Inspection Workstation</h1>
+                            <p class="hero-subtitle">Dedicated Automotive Engine Wiring Inspection: Upload harness
+                                capture or select a benchmark sample
+                                to analyse potential anomalies with multi-view inspection.</p>
+                        </div>
+                    </div>
+
+                    <div class="inspection-workspace-grid">
+
+                        <!-- Left Control Column: Upload & Benchmark Quick Picks -->
+                        <div class="workspace-left-panel">
+
+                            <!-- SECTION A: IMAGE UPLOAD -->
+                            <div class="dropzone-card">
+                                <h3 class="card-title-sm">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17 8 12 3 7 8"></polyline>
+                                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    </svg>
+                                    Automotive Component Upload
+                                </h3>
+                                <div class="dropzone-target" id="dropZone">
+                                    <div class="dropzone-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="17 8 12 3 7 8"></polyline>
+                                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                                        </svg>
+                                    </div>
+                                    <div class="dropzone-text">Drag & Drop Engine Wiring Image Here</div>
+                                    <div class="dropzone-hint">Automotive Harness Capture (PNG, JPG, JPEG &bull;
+                                        Standard 400&times;400)</div>
+                                    <label class="btn btn-secondary btn-sm" for="fileInput" style="margin-top:6px;">
+                                        <span>Browse Local File</span>
+                                    </label>
+                                    <input type="file" id="fileInput" accept="image/png,image/jpeg,image/jpg"
+                                        style="display:none">
+                                </div>
+
+                                <!-- Upload Preview Box -->
+                                <div class="upload-preview-box" id="uploadPreviewBox" style="display:none">
+                                    <img id="uploadPreviewThumb" class="upload-thumb" src="" alt="Thumbnail preview">
+                                    <div class="upload-info">
+                                        <div class="upload-name" id="uploadPreviewName">filename.png</div>
+                                        <div class="upload-meta" id="uploadPreviewMeta">PNG &bull; 400x400 &bull; 120 KB
+                                        </div>
+                                    </div>
+                                    <div class="workspace-actions" style="margin-top:0">
+                                        <button class="btn btn-danger btn-sm" id="btnRemoveUpload"
+                                            title="Remove">&times;</button>
+                                        <button class="btn btn-primary btn-sm" id="btnExecuteUploadInference">
+                                            <span>Run Inspection</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SECTION B: BENCHMARK SAMPLES -->
+                            <div class="presets-card">
+                                <h3 class="card-title-sm">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                        </polygon>
+                                    </svg>
+                                    Benchmark Test Presets
+                                </h3>
+                                <div class="presets-grid">
+                                    <button class="preset-chip" data-sample="normal">
+                                        <span class="preset-name" style="color:#34D399">Normal Clean</span>
+                                        <span class="preset-sub">Nominal baseline</span>
+                                    </button>
+                                    <button class="preset-chip" data-sample="fastening">
+                                        <span class="preset-name" style="color:#FBBF24">Fastening Wire</span>
+                                        <span class="preset-sub">Micro-defect (&lt;0.8%)</span>
+                                    </button>
+                                    <button class="preset-chip" data-sample="blue_hoop">
+                                        <span class="preset-name" style="color:#F87171">Blue Hoop</span>
+                                        <span class="preset-sub">Missing clamp</span>
+                                    </button>
+                                    <button class="preset-chip" data-sample="cardboard">
+                                        <span class="preset-name" style="color:#F87171">Cardboard</span>
+                                        <span class="preset-sub">Foreign material</span>
+                                    </button>
+                                    <button class="preset-chip" data-sample="multiple">
+                                        <span class="preset-name" style="color:#F87171">Multiple Defect</span>
+                                        <span class="preset-sub">Compound anomaly</span>
+                                    </button>
+                                    <button class="preset-chip" data-sample="obstruction">
+                                        <span class="preset-name" style="color:#F87171">Obstruction</span>
+                                        <span class="preset-sub">Foreign intrusive part</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Right Results Column: Viewer, Decision, Analysis -->
+                        <div class="workspace-right-panel">
+
+                            <!-- Inspection Status Placeholder (Empty State) -->
+                            <div class="workspace-state-card" id="emptyWorkspaceCard">
+                                <div class="state-icon-wrap">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 16v-4"></path>
+                                        <path d="M12 8h.01"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="card-title-sm">Awaiting Inspection Input</h3>
+                                <p class="hero-subtitle">Upload an automotive wiring harness image or choose a benchmark
+                                    preset to trigger PatchCore AI inference.</p>
+                            </div>
+
+                            <!-- Inference Loading State -->
+                            <div class="workspace-state-card" id="loadingWorkspaceCard" style="display:none">
+                                <div class="scanning-spinner"></div>
+                                <h3 class="card-title-sm">PatchCore Feature Extraction &amp; Nearest-Neighbor Search</h3>
+                                <p class="hero-subtitle">Extracting multi-scale layer2 + layer3 representations and
+                                    querying coreset memory bank on RTX 3050...</p>
+                            </div>
+
+                            <!-- ACTIVE INSPECTION CONTAINER -->
+                            <div class="active-inspection-container" id="activeInspectionContainer"
+                                style="display:none; display:flex; flex-direction:column; gap:18px;">
+
+                                <!-- INSPECTION RESULT DECISION BAR -->
+                                <div class="decision-bar-card">
+                                    <div class="decision-left">
+                                        <div class="decision-badge normal" id="resDecisionPill">NORMAL</div>
+                                        <div class="decision-details">
+                                            <span class="decision-id" id="resInspectionId">INSP-00000000</span>
+                                            <span class="decision-meta"><span id="resInspectionTime">--:--:--</span>
+                                                &bull; <span id="resFilename">sample.png</span></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Score Meter and Threshold -->
+                                    <div class="decision-meter-wrap">
+                                        <div class="meter-header">
+                                            <span class="meter-label">Anomaly Score: <span class="meter-score"
+                                                    id="resAnomalyScore">0.00</span></span>
+                                            <span class="meter-label">Threshold: <span class="meter-score"
+                                                    id="resThreshold">23.4457</span></span>
+                                        </div>
+                                        <div class="meter-track">
+                                            <div class="meter-fill" id="resMeterFill" style="width: 0%"></div>
+                                            <div class="meter-threshold-pin" id="resMeterPin"
+                                                title="Threshold: 23.4457"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MULTI-VIEW VISUAL INSPECTION VIEWER (4 MODES) -->
+                                <div class="viewer-card">
+                                    <div class="viewer-controls-bar">
+                                        <!-- 4 View Switcher Tabs -->
+                                        <div class="viewer-tabs">
+                                            <button class="viewer-tab-btn" data-view="original">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                                <span>1. Original</span>
+                                            </button>
+                                            <button class="viewer-tab-btn" data-view="heatmap">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                                </svg>
+                                                <span>2. Heatmap</span>
+                                            </button>
+                                            <button class="viewer-tab-btn active" data-view="overlay">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <polyline points="12 6 12 12 14 14"></polyline>
+                                                </svg>
+                                                <span>3. Overlay</span>
+                                            </button>
+                                            <button class="viewer-tab-btn" data-view="comparison">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                    <line x1="9" y1="3" x2="9" y2="21"></line>
+                                                </svg>
+                                                <span>4. Side-by-Side</span>
+                                            </button>
+                                        </div>
+
+                                        <!-- Opacity Slider for View 3 -->
+                                        <div class="opacity-slider-wrap" id="overlayOpacityWrap">
+                                            <label for="overlayOpacitySlider">Heatmap Opacity:</label>
+                                            <input type="range" class="opacity-slider" id="overlayOpacitySlider" min="0"
+                                                max="100" value="65">
+                                            <span class="opacity-val-badge" id="overlayOpacityValue">65%</span>
+                                        </div>
+
+                                        <!-- Heatmap Colormap Scale Legend for View 2 -->
+                                        <div class="colormap-legend" id="heatmapLegendWrap" style="display:none">
+                                            <span>Scale:</span>
+                                            <div class="colormap-bar"></div>
+                                            <span>0.0 &rarr; 35.0+</span>
+                                        </div>
+
+                                        <!-- Pan/Zoom Controls -->
+                                        <div class="zoom-toolbar">
+                                            <button class="zoom-btn" id="btnZoomOut" title="Zoom Out">&minus;</button>
+                                            <span class="zoom-level-badge" id="zoomLevelDisplay">100%</span>
+                                            <button class="zoom-btn" id="btnZoomIn" title="Zoom In">&plus;</button>
+                                            <button class="zoom-btn" id="btnResetZoom" title="Reset Zoom">Reset</button>
+                                            <button class="zoom-btn" id="btnFitScreen"
+                                                title="Fit to screen">Fit</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="viewer-stage-wrap" id="viewerStageWrap">
+                                        <!-- Single View Stage (Views 1, 2, 3) -->
+                                        <div class="single-stage" id="singleStage"
+                                            style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                                            <div class="stage-pan-container" id="stagePanContainer">
+                                                <!-- Pure Original Capture -->
+                                                <img id="imgOriginal" class="canvas-img" src="" alt="Original Capture"
+                                                    style="display:none">
+
+                                                <!-- Pure Anomaly Heatmap -->
+                                                <img id="imgHeatmap" class="canvas-img" src="" alt="Anomaly Heatmap"
+                                                    style="display:none">
+
+                                                <!-- Interactive Blended Decision Overlay -->
+                                                <div class="overlay-blend-stage" id="overlayBlendStage"
+                                                    style="display:flex">
+                                                    <img id="blendBaseImg" class="base-img" src="" alt="Base Capture">
+                                                    <img id="blendHeatmapImg" class="blend-heatmap" src=""
+                                                        alt="Heatmap Layer" style="opacity: 0.65">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- View 4: Side-by-Side Synchronized Triad Stage -->
+                                        <div class="triad-stage" id="triadStage" style="display:none">
+                                            <div class="triad-panel">
+                                                <div class="triad-panel-header">1. Original Capture</div>
+                                                <div class="triad-panel-body">
+                                                    <img id="imgTriadOriginal" src="" alt="Original">
+                                                </div>
+                                            </div>
+                                            <div class="triad-panel">
+                                                <div class="triad-panel-header">2. PatchCore Heatmap</div>
+                                                <div class="triad-panel-body">
+                                                    <img id="imgTriadHeatmap" src="" alt="Heatmap">
+                                                </div>
+                                            </div>
+                                            <div class="triad-panel">
+                                                <div class="triad-panel-header">3. Decision Overlay</div>
+                                                <div class="triad-panel-body">
+                                                    <img id="imgTriadOverlay" src="" alt="Overlay">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- DEFECT REGION ANALYSIS & DIAGNOSTICS -->
+                                <div class="diagnostics-grid">
+                                    <div class="diagnostic-panel">
+                                        <div class="kpi-header">
+                                            <h3 class="card-title-sm">Spatial Anomaly Telemetry</h3>
+                                            <a href="#" class="btn btn-secondary btn-sm"
+                                                id="btnOpenReportFromInspection" target="_blank">
+                                                <span>Printable Report</span>
+                                            </a>
+                                        </div>
+                                        <div class="diagnostic-stat-row">
+                                            <span class="diag-lbl">Peak Anomaly Score:</span>
+                                            <span class="diag-val" id="resPeakScore">0.00</span>
+                                        </div>
+                                        <div class="diagnostic-stat-row">
+                                            <span class="diag-lbl">Mean Anomaly Score:</span>
+                                            <span class="diag-val" id="resMeanScore">0.00</span>
+                                        </div>
+                                        <div class="diagnostic-stat-row">
+                                            <span class="diag-lbl">Connected Defect Clusters:</span>
+                                            <span class="diag-val" id="resRegionCount">0</span>
+                                        </div>
+                                        <div class="diagnostic-stat-row">
+                                            <span class="diag-lbl">Anomalous Surface Fraction:</span>
+                                            <span class="diag-val" id="resAreaPct">0.0%</span>
+                                        </div>
+                                        <div class="diagnosis-notice-box" id="resDiagnosisText">
+                                            Awaiting inspection diagnosis.
+                                        </div>
+                                    </div>
+
+                                    <!-- Bounding Box Table Panel -->
+                                    <div class="diagnostic-panel">
+                                        <h3 class="card-title-sm">Identified Suspicious Regions</h3>
+                                        <div class="table-responsive" style="max-height:220px; overflow-y:auto;">
+                                            <table class="data-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Region</th>
+                                                        <th>BBox (X, Y, W, H)</th>
+                                                        <th>Centroid</th>
+                                                        <th>Area</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="regionTableBody">
+                                                    <tr>
+                                                        <td colspan="4"
+                                                            style="text-align:center; color:var(--text-muted); padding:16px;">
+                                                            No suspicious regions detected exceeding 2-sigma baseline
+                                                            variance.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- BASELINE VS EXPERIMENTAL SCORING COMPARISON -->
+                                <div class="diagnostic-panel" id="comparisonCard">
+                                    <div class="kpi-header">
+                                        <h3 class="card-title-sm">Inference Telemetry Comparison</h3>
+                                        <span class="domain-tag active-tag">PatchCore Architecture</span>
+                                    </div>
+                                    <div class="diagnostics-grid" style="margin-top:10px;">
+                                        <div class="telemetry-compare-box">
+                                            <div class="telemetry-compare-heading baseline">Production Baseline</div>
+                                            <div class="diagnostic-stat-row"><span class="diag-lbl">Global Anomaly Score:</span><span class="diag-val" id="compBaseScore">--</span></div>
+                                            <div class="diagnostic-stat-row"><span class="diag-lbl">Calibrated Threshold:</span><span class="diag-val">23.4457</span></div>
+                                            <div class="diagnostic-stat-row"><span class="diag-lbl">Classification:</span><span class="diag-val" id="compBaseDecision">--</span></div>
+                                        </div>
+                                        <div class="telemetry-compare-box">
+                                            <div class="telemetry-compare-heading spatial">Spatial Contrast Telemetry</div>
+                                            <div class="diagnostic-stat-row"><span class="diag-lbl">Background Mean &mu;:</span><span class="diag-val" id="compExpBgMean">--</span></div>
+                                            <div class="diagnostic-stat-row"><span class="diag-lbl">Peak Contrast Ratio:</span><span class="diag-val" id="compExpRatio">--</span></div>
+                                            <div class="diagnostic-stat-row"><span class="diag-lbl">Contrast Z-Score:</span><span class="diag-val" id="compExpZScore">--</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ============================================================== -->
+                <!-- PAGE 3: BENCHMARK TESTING MATRIX                               -->
+                <!-- ============================================================== -->
+                <section class="page-section" id="section-benchmarks">
+                    <div class="section-hero">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Benchmark Testing Matrix</h1>
+                            <p class="hero-subtitle">Comprehensive evaluation suite across all verified automotive
+                                manufacturing defect classes.</p>
+                        </div>
+                    </div>
+
+                    <div class="kpi-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <!-- Nominal -->
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">AutoVI / Good</span>
+                                <span class="kpi-badge success">285 captures</span>
+                            </div>
+                            <h3 class="card-title-sm">Clean Wiring Harness</h3>
+                            <p class="benchmark-card-desc">Defect-free baseline
+                                harnesses conforming to OEM assembly tolerance.</p>
+                            <div class="benchmark-card-stats">
+                                Mean: 20.08 &bull; AUROC: 1.000</div>
+                            <button class="btn btn-secondary btn-sm" style="width:100%" data-sample="normal">Run Nominal
+                                Test</button>
+                        </div>
+
+                        <!-- Fastening Wire -->
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">AutoVI / Fastening</span>
+                                <span class="kpi-badge warning">277 captures</span>
+                            </div>
+                            <h3 class="card-title-sm">Unclipped Fastening Wire</h3>
+                            <p class="benchmark-card-desc">Loose wire
+                                micro-defect (&lt;0.8% surface area). Highly localized heatmap.</p>
+                            <div class="benchmark-card-stats">
+                                Mean: 21.79 &bull; AUROC: 0.7935</div>
+                            <button class="btn btn-secondary btn-sm" style="width:100%" data-sample="fastening">Run
+                                Fastening Test</button>
+                        </div>
+
+                        <!-- Blue Hoop -->
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">AutoVI / Blue Hoop</span>
+                                <span class="kpi-badge warning">5 captures</span>
+                            </div>
+                            <h3 class="card-title-sm">Displaced Blue Hoop</h3>
+                            <p class="benchmark-card-desc">Displaced or missing
+                                plastic conduit assembly clamp.</p>
+                            <div class="benchmark-card-stats">
+                                Mean: 21.99 &bull; AUROC: 0.8323</div>
+                            <button class="btn btn-secondary btn-sm" style="width:100%" data-sample="blue_hoop">Run Blue
+                                Hoop Test</button>
+                        </div>
+
+                        <!-- Cardboard -->
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">AutoVI / Cardboard</span>
+                                <span class="kpi-badge warning">5 captures</span>
+                            </div>
+                            <h3 class="card-title-sm">Foreign Cardboard Debris</h3>
+                            <p class="benchmark-card-desc">Intrusive packaging
+                                material left in the engine harness compartment.</p>
+                            <div class="benchmark-card-stats">
+                                Mean: 31.68 &bull; AUROC: 1.000</div>
+                            <button class="btn btn-secondary btn-sm" style="width:100%" data-sample="cardboard">Run
+                                Cardboard Test</button>
+                        </div>
+
+                        <!-- Multiple -->
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">AutoVI / Multiple</span>
+                                <span class="kpi-badge warning">33 captures</span>
+                            </div>
+                            <h3 class="card-title-sm">Compound Defects</h3>
+                            <p class="benchmark-card-desc">Compound visual defects with unclipped wires and structural displacements.</p>
+                            <div class="benchmark-card-stats">
+                                Mean: 23.80 &bull; AUROC: 0.9712</div>
+                            <button class="btn btn-secondary btn-sm" style="width:100%" data-sample="multiple">Run
+                                Multiple Test</button>
+                        </div>
+
+                        <!-- Obstruction -->
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <span class="kpi-label">AutoVI / Obstruction</span>
+                                <span class="kpi-badge warning">2 captures</span>
+                            </div>
+                            <h3 class="card-title-sm">Foreign Object Debris</h3>
+                            <p class="benchmark-card-desc">Foreign intrusive object blocking harness connector routing fixture.</p>
+                            <div class="benchmark-card-stats">
+                                Mean: 22.51 &bull; AUROC: 0.9491</div>
+                            <button class="btn btn-secondary btn-sm" style="width:100%" data-sample="obstruction">Run
+                                Obstruction Test</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================================================== -->
+                <!-- PAGE 4: ANALYTICS & TELEMETRY                                  -->
+                <!-- ============================================================== -->
+                <section class="page-section" id="section-analytics">
+                    <div class="section-hero">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Inspection Analytics & Telemetry</h1>
+                            <p class="hero-subtitle">Aggregated statistical analysis, empirical score distributions,
+                                category performance, and quality trends.</p>
+                        </div>
+                    </div>
+
+                    <!-- Filter Toolbar -->
+                    <div class="history-toolbar"
+                        style="background:var(--bg-card); padding:16px 20px; border-radius:var(--radius-lg); border:1px solid var(--border-color);">
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <label for="filterOutcome" class="toolbar-label">Filter Outcome:</label>
+                            <select class="filter-select" id="filterOutcome">
+                                <option value="all">All Predictions</option>
+                                <option value="normal">Normal Only</option>
+                                <option value="defect">Potential Defect Only</option>
+                            </select>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <span class="toolbar-label">Threshold:</span>
+                            <span class="domain-tag active-tag mono">{{ metrics.threshold }}</span>
+                            <button class="btn btn-secondary btn-sm" id="btnRefreshAnalytics">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <polyline points="1 20 1 14 7 14"></polyline>
+                                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15">
+                                    </path>
+                                </svg>
+                                <span>Refresh Telemetry</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 4 Analytics Charts Grid -->
+                    <div class="analytics-grid">
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <h3 class="card-title-sm">A. Anomaly Score Distribution Histogram</h3>
+                                <p class="hero-subtitle">Frequencies relative to calibrated factory threshold (23.45).
+                                </p>
+                            </div>
+                            <div class="chart-canvas-wrap">
+                                <canvas id="chartAnalyticsHistogram"></canvas>
+                                <div class="chart-empty-state" id="chartAnalyticsHistogramEmpty"
+                                    style="display:none; text-align:center; padding:40px; color:var(--text-muted)">
+                                    <span>No inspection scores available for current filter.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <h3 class="card-title-sm">B. Defect Class Detection Profile</h3>
+                                <p class="hero-subtitle">Benchmark sample count, detection counts, and empirical AUROC.
+                                </p>
+                            </div>
+                            <div class="chart-canvas-wrap">
+                                <canvas id="chartAnalyticsBreakdown"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <h3 class="card-title-sm">C. Inspection Score Chronological Trajectory</h3>
+                                <p class="hero-subtitle">Score sequence from session inspection history.</p>
+                            </div>
+                            <div class="chart-canvas-wrap">
+                                <canvas id="chartAnalyticsTimeline"></canvas>
+                                <div class="chart-empty-state" id="chartAnalyticsTimelineEmpty"
+                                    style="display:none; text-align:center; padding:40px; color:var(--text-muted)">
+                                    <span>Run inspections to populate timeline.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <h3 class="card-title-sm">D. Inspection Outcome Distribution</h3>
+                                <p class="hero-subtitle">Normal vs Potential Defect breakdown.</p>
+                            </div>
+                            <div class="chart-canvas-wrap">
+                                <canvas id="chartAnalyticsOutcomes"></canvas>
+                                <div class="chart-empty-state" id="chartAnalyticsOutcomesEmpty"
+                                    style="display:none; text-align:center; padding:40px; color:var(--text-muted)">
+                                    <span>No inspection outcomes recorded yet.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================================================== -->
+                <!-- PAGE 5: INSPECTION HISTORY                                     -->
+                <!-- ============================================================== -->
+                <section class="page-section" id="section-history">
+                    <div class="section-hero">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Inspection History Register</h1>
+                            <p class="hero-subtitle">Searchable session audit trail with comprehensive telemetry and
+                                export actions.</p>
+                        </div>
+                    </div>
+
+                    <div class="history-card">
+                        <div class="history-toolbar">
+                            <div class="search-box">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                <input type="text" id="historySearchInput" placeholder="Search by ID or filename...">
+                            </div>
+                            <select class="filter-select" id="historyFilterSelect">
+                                <option value="all">All Outcomes</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Potential Defect">Potential Defect</option>
+                            </select>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Inspection ID</th>
+                                        <th>Timestamp</th>
+                                        <th>Image Filename</th>
+                                        <th>Anomaly Score</th>
+                                        <th>Threshold</th>
+                                        <th>AI Prediction</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historyTableBody">
+                                    <tr>
+                                        <td colspan="7"
+                                            style="text-align:center; color:var(--text-muted); padding:24px;">No
+                                            inspections performed yet. Run an inspection from the workspace or benchmark
+                                            matrix.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================================================== -->
+                <!-- PAGE 6: REPORTS                                                -->
+                <!-- ============================================================== -->
+                <section class="page-section" id="section-reports">
+                    <div class="section-hero">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Inspection Reports Catalog</h1>
+                            <p class="hero-subtitle">Downloadable and printable compliance inspection reports for audit
+                                and quality assurance.</p>
+                        </div>
+                    </div>
+
+                    <div class="history-card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Report ID</th>
+                                        <th>Generated</th>
+                                        <th>Component Sample</th>
+                                        <th>Anomaly Score</th>
+                                        <th>Result</th>
+                                        <th>Downloads</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reportsTableBody">
+                                    <tr>
+                                        <td colspan="6"
+                                            style="text-align:center; color:var(--text-muted); padding:24px;">No reports
+                                            generated in this session. Reports are automatically produced for each
+                                            completed inspection.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================================================== -->
+                <!-- PAGE 7: MODEL INFORMATION                                      -->
+                <!-- ============================================================== -->
+                <section class="page-section" id="section-model">
+                    <div class="section-hero">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Model Architecture & Specifications</h1>
+                            <p class="hero-subtitle">Technical documentation of the PatchCore industrial visual anomaly
+                                detection pipeline.</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics-grid">
+                        <div class="kpi-card">
+                            <h3 class="card-title-sm">1. PatchCore Methodology</h3>
+                            <p class="model-doc-text">
+                                PROMETHEUS-X utilizes the <strong>PatchCore</strong> memory-bank inspection
+                                architecture. Unlike conventional supervised classifiers that require hundreds of
+                                defective examples, PatchCore is an unsupervised anomaly detection framework trained
+                                <em>strictly on nominal (good) images</em>.
+                            </p>
+                        </div>
+                        <div class="kpi-card">
+                            <h3 class="card-title-sm">2. Frozen ResNet-50 Backbone</h3>
+                            <p class="model-doc-text">
+                                A frozen <strong>ResNet-50</strong> pretrained on ImageNet extracts multi-scale visual
+                                features from intermediate convolutional blocks: Layer 2 (edges & wire boundaries) and
+                                Layer 3 (bundle context), concatenated into 1536-dimensional patch representations.
+                            </p>
+                        </div>
+                        <div class="kpi-card">
+                            <h3 class="card-title-sm">3. Coreset Memory Bank Subsampling</h3>
+                            <p class="model-doc-text">
+                                The full nominal patch memory bank (223,440 vectors) is compressed via a
+                                memory-efficient greedy coreset selection algorithm to <strong>10%
+                                    representation</strong> (22,344 vectors), enabling inference latency under 120ms on
+                                RTX 3050 GPUs.
+                            </p>
+                        </div>
+                        <div class="kpi-card">
+                            <h3 class="card-title-sm">4. Statistical Threshold Calibration</h3>
+                            <p class="model-doc-text">
+                                The factory decision threshold is calibrated to <strong>23.4457</strong> using a
+                                rigorous statistical envelope (&mu; + 3&sigma;) derived from 30 holdout nominal
+                                validation samples, ensuring ultra-low false alarm rates (&lt;1.05%).
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================================================== -->
+                <!-- PAGE 8: ABOUT PROMETHEUS-X                                     -->
+                <!-- ============================================================== -->
+                <section class="page-section" id="section-about">
+                    <div class="section-hero">
+                        <div class="hero-content">
+                            <h1 class="hero-title">About PROMETHEUS-X</h1>
+                            <p class="hero-subtitle">Open-Set Vision AI for Industrial Quality Assurance.</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics-grid">
+                        <div class="kpi-card">
+                            <h3 class="card-title-sm">Product Mission</h3>
+                            <p class="model-doc-text">
+                                <strong>PROMETHEUS-X</strong> is an industrial AI visual inspection platform designed to
+                                assist automotive quality engineers in identifying assembly errors, missing clamps,
+                                unclipped fastening wires, and foreign object debris (FOD) during component assembly.
+                            </p>
+                        </div>
+                        <div class="kpi-card">
+                            <h3 class="card-title-sm">System Specifications</h3>
+                            <div class="diagnostic-stat-row"><span class="diag-lbl">Framework:</span><span
+                                    class="diag-val">PyTorch 2.6.0 + Flask</span></div>
+                            <div class="diagnostic-stat-row"><span class="diag-lbl">Inference Engine:</span><span
+                                    class="diag-val">PatchCore Nearest Neighbor</span></div>
+                            <div class="diagnostic-stat-row"><span class="diag-lbl">Resolution:</span><span
+                                    class="diag-val">400 &times; 400 &times; 3 RGB</span></div>
+                            <div class="diagnostic-stat-row"><span class="diag-lbl">Threshold:</span><span
+                                    class="diag-val">23.4457 (&mu; + 3&sigma;)</span></div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Detail Modal for Inspection History -->
+    <div class="modal-backdrop" id="detailModalBackdrop" style="display:none">
+        <div class="modal-window">
+            <div class="modal-header">
+                <div>
+                    <h3 class="modal-title" id="modalTitle">Inspection Detail</h3>
+                    <p class="modal-subtitle" id="modalSubtitle">Detailed diagnostic record</p>
+                </div>
+                <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>

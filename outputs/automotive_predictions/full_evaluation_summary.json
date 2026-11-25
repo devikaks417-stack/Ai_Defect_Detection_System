@@ -1,0 +1,80 @@
+{
+  "calibrated_threshold": 23.445653740407064,
+  "total_test_images": 607,
+  "confusion_matrix": {
+    "TN": 282,
+    "FP": 3,
+    "FN": 273,
+    "TP": 49
+  },
+  "accuracy": 0.5453,
+  "precision": 0.9423,
+  "recall": 0.1522,
+  "f1_score": 0.262,
+  "image_auroc": 0.8165,
+  "pixel_auroc": 0.8724,
+  "pro_score": 0.6746,
+  "category_metrics": [
+    {
+      "category": "fastening",
+      "total_samples": 277,
+      "true_positive": 26,
+      "false_negative": 251,
+      "recall": 9.39,
+      "image_auroc": 0.7935,
+      "mean_score": 21.7878,
+      "min_score": 19.0949,
+      "max_score": 27.4373
+    },
+    {
+      "category": "multiple",
+      "total_samples": 33,
+      "true_positive": 18,
+      "false_negative": 15,
+      "recall": 54.55,
+      "image_auroc": 0.9712,
+      "mean_score": 23.8024,
+      "min_score": 21.7762,
+      "max_score": 27.4786
+    },
+    {
+      "category": "blue_hoop",
+      "total_samples": 5,
+      "true_positive": 0,
+      "false_negative": 5,
+      "recall": 0.0,
+      "image_auroc": 0.8323,
+      "mean_score": 21.9892,
+      "min_score": 20.4465,
+      "max_score": 23.4449
+    },
+    {
+      "category": "cardboard",
+      "total_samples": 5,
+      "true_positive": 5,
+      "false_negative": 0,
+      "recall": 100.0,
+      "image_auroc": 1.0,
+      "mean_score": 31.6801,
+      "min_score": 26.4352,
+      "max_score": 34.7819
+    },
+    {
+      "category": "obstruction",
+      "total_samples": 2,
+      "true_positive": 0,
+      "false_negative": 2,
+      "recall": 0.0,
+      "image_auroc": 0.9491,
+      "mean_score": 22.5143,
+      "min_score": 22.2296,
+      "max_score": 22.7991
+    }
+  ],
+  "fastening_defect_investigation": {
+    "defect_pixels_mean": 19.5384,
+    "defect_pixels_max": 19.9716,
+    "bg_pixels_mean": 14.9763,
+    "bg_pixels_max": 19.9916
+  }
+}

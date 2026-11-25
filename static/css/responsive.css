@@ -1,0 +1,317 @@
+/* ==========================================================================
+   PROMETHEUS-X: Enterprise Responsive Stylesheet
+   Supports Viewports: 1920px, 1440px, 1280px, 1024px, 768px, 430px, 390px, 375px, 320px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOP & SMALL DESKTOP (<= 1280px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+    .page-container {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .benchmark-metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .inspection-workspace-grid {
+        grid-template-columns: 320px 1fr;
+        gap: 18px;
+    }
+
+    .benchmark-matrix-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .overview-charts-grid, .overview-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET LANDSCAPE & NOTEBOOK (<= 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    :root {
+        --sidebar-width: 240px;
+    }
+
+    .app-topbar {
+        padding: 0 18px;
+    }
+
+    .inspection-workspace-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .viewer-stage-wrap {
+        height: 420px;
+    }
+
+    .triad-stage {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 14px;
+    }
+
+    .triad-panel img {
+        max-height: 280px;
+    }
+
+    .doc-cards-grid, .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .telemetry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLET PORTRAIT (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Convert sidebar into off-canvas drawer */
+    .app-sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        z-index: 500;
+        width: 280px !important;
+        transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 10px 0 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .app-sidebar.drawer-open {
+        left: 0;
+    }
+
+    .sidebar-toggle-btn {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    /* Backdrop */
+    .drawer-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(16, 27, 45, 0.6);
+        backdrop-filter: blur(4px);
+        z-index: 450;
+        display: none;
+    }
+    .drawer-backdrop.active {
+        display: block;
+    }
+
+    .app-topbar {
+        padding: 0 14px;
+    }
+
+    .model-pill, .system-pill {
+        display: none !important;
+    }
+
+    .page-container {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .section-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .hero-actions {
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .benchmark-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benchmark-matrix-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-bar-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .viewer-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .viewer-tabs {
+        overflow-x: auto;
+        padding-bottom: 2px;
+    }
+
+    .viewer-controls {
+        justify-content: space-between;
+    }
+
+    #btnToggleTriad {
+        display: none; /* Hide 3-way side-by-side on tablet/mobile in favor of segmented tabs */
+    }
+
+    .history-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        min-width: 100%;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. MOBILE STANDARD (<= 430px / 390px / 375px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .breadcrumbs .crumb-root, .breadcrumbs .crumb-separator {
+        display: none !important;
+    }
+
+    .topbar-right .btn span {
+        display: none !important;
+    }
+
+    .model-pill, .system-pill {
+        display: none !important;
+    }
+
+    .topbar-right {
+        gap: 6px !important;
+    }
+
+    .hero-title {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .card-title-sm, .card-title, .benchmark-title {
+        font-size: 15px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi-value {
+        font-size: 24px;
+    }
+
+    .benchmark-metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benchmark-sample-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .viewer-stage-wrap {
+        height: 320px;
+    }
+
+    .viewer-img {
+        max-height: 290px;
+    }
+
+    .telemetry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-summary-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .decision-pill {
+        width: 100%;
+        text-align: center;
+    }
+
+    .upload-preview-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .preview-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    /* Touch Targets >= 44px for ergonomics */
+    .btn, .nav-link, .sample-chip, .viewer-tab-btn, .viewer-tool-btn {
+        min-height: 44px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. ULTRA-COMPACT MOBILE (<= 320px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 320px) {
+    .page-container {
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .hero-title {
+        font-size: 18px;
+    }
+
+    .hero-subtitle {
+        font-size: 11px;
+    }
+
+    .viewer-stage-wrap {
+        height: 250px;
+    }
+
+    .viewer-img {
+        max-height: 230px;
+    }
+
+    .system-pill .pill-text {
+        display: none;
+    }
+
+    .data-table th, .data-table td {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}
